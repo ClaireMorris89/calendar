@@ -11,7 +11,7 @@ Building this website taught me how to use jQuery to add event listeners, make c
 
 This website can be used to keep track of daily tasks during an 8-hour work day. It can help you stay on track by color-coding current and future tasks/events that need to take place, as well as reminding you of past events that you've completed.
 
-website can be found at : 
+website can be found at : https://clairemorris89.github.io/calendar/
 
 <img width="1404" alt="Screenshot 2023-03-30 at 3 51 50 PM" src="https://user-images.githubusercontent.com/124100820/228972949-8d0172a2-91d7-4054-a0cb-90903287d66d.png">
 
