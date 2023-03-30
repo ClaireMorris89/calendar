@@ -9,16 +9,6 @@ var threePm = $('#15').attr('id');
 var fourPm = $('#16').attr('id');
 var fivePm = $('#17').attr('id');
 
-//setting each element to the time they're representing
-nineAm = 09;
-tenAm = 10;
-elevenAm = 11;
-twelvePm = 12;
-onePm = 13;
-twoPm = 14;
-threePm = 15;
-fourPm = 20;
-fivePm = 19;
 
 //running function to save the value of the text area to the keyed value of the parent id (time)
 $(function () {

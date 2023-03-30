@@ -13,7 +13,10 @@ This website can be used to keep track of daily tasks during an 8-hour work day.
 
 website can be found at : 
 
-ADD SCREENSHOTS
+<img width="1404" alt="Screenshot 2023-03-30 at 3 51 50 PM" src="https://user-images.githubusercontent.com/124100820/228972949-8d0172a2-91d7-4054-a0cb-90903287d66d.png">
+
+<img width="1346" alt="Screenshot 2023-03-30 at 3 52 20 PM" src="https://user-images.githubusercontent.com/124100820/228973005-941fade0-06d7-46e2-9013-bb37665aefce.png">
+
 
 ## License 
 
