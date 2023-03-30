@@ -1,6 +1,4 @@
-// Wrap all code that interacts with the DOM in a call to jQuery to ensure that
-// the code isn't run until the browser has finished rendering all the elements
-// in the html.
+//calling all variables by their id so I can compare to the dayjs current time
 var nineAm = $('#09').attr('id');
 var tenAm = $('#10').attr('id');
 var elevenAm = $('#11').attr('id');
@@ -11,7 +9,7 @@ var threePm = $('#15').attr('id');
 var fourPm = $('#16').attr('id');
 var fivePm = $('#17').attr('id');
 
-
+//setting each element to the time they're representing
 nineAm = 09;
 tenAm = 10;
 elevenAm = 11;
@@ -22,27 +20,22 @@ threePm = 15;
 fourPm = 20;
 fivePm = 19;
 
-
-var hours = [nineAm, tenAm, elevenAm, twelvePm, onePm, twoPm, threePm, fourPm, fivePm];
-
+//running function to save the value of the text area to the keyed value of the parent id (time)
 $(function () {
-    // TODO: Add a listener for click events on the save button. This code should
-    // use the id in the containing time-block as a key to save the user input in
-    // local storage. HINT: What does `this` reference in the click listener
-    // function? How can DOM traversal be used to get the "hour-x" id of the
-    // time-block containing the button that was clicked? How might the id be
-    // useful when saving the description in local storage?
-    //
-    // TODO: Add code to apply the past, present, or future class to each time
-    // block by comparing the id to the current hour. HINTS: How can the id
-    // attribute of each time-block be used to conditionally add or remove the
-    // past, present, and future classes? How can Day.js be used to get the
-    // current hour in 24-hour time?
-    
-    var currentTime = dayjs().hour();
-    console.log(currentTime);
+    $('.saveBtn').on('click',function(event){
+        event.preventDefault();
+        var id = $(this).parent().attr('id');
+        var text = $(this).prev().val();
+        localStorage.setItem(id,text);
+    })
+});
 
+//setting current time variable equal to the hour of day using day js
+    var currentTime = dayjs().hour();
+
+//setting past/present/future classes to each time-block based on the comparison of the time (id) to the current time
     $('.time-block').each(function (){
+        var timeLabel = $(this).attr('id')
         if ($(this).attr('id')==currentTime){
             $(this).addClass('present');
         } else if ($(this).attr('id') > currentTime){
@@ -50,17 +43,19 @@ $(function () {
         } else {
             $(this).addClass('past');
         }
-    });
+    //using local storage to get the value of anything saved in a text area to store within the id of the div it belongs in
+    $(this).children('textarea').val(localStorage.getItem(timeLabel))
 
 
-    // TODO: Add code to get any user input that was saved in localStorage and set
-    // the values of the corresponding textarea elements. HINT: How can the id
-    // attribute of each time-block be used to do this?
- 
-
-
-    // TODO: Add code to display the current date in the header of the page.
+ //using dayjs to set todays date 
     var todayDate= dayjs();
     $('#currentDay').text(todayDate.format('dddd MMMM D, YYYY'));
+    
+
   });
+  
+    timeInterval=setInterval(function(){
+        var timeNow=dayjs();
+        $('#timeNow').text(timeNow.format('hh : mm ss a'));
+    }, 1000);
   
